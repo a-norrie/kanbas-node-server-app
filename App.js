@@ -7,6 +7,8 @@ import Lab5 from "./Lab5.js"
 import cors from "cors";
 import CourseRoutes from "./Kanbas/courses/routes.js";
 import ModuleRoutes from './Kanbas/modules/routes.js';
+import QuizRoutes from './Kanbas/quizzes/routes.js';
+
 import session from "express-session";
 
 
@@ -41,5 +43,6 @@ Lab5(app);
 Hello(app);
 CourseRoutes(app);
 ModuleRoutes(app);
+QuizRoutes(app);
 app.listen(4000)
 

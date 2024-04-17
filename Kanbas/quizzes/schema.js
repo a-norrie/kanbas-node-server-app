@@ -1,5 +1,19 @@
 import mongoose from "mongoose";
+
+const questionSchema = new mongoose.Schema({
+  id: String,
+  type: String,
+  title: String,
+  description: String,
+  points: Number,
+  choices: [String],
+  answers: [String]
+});
+
 const quizSchema = new mongoose.Schema({
+    name:String,
+    course:String,
+    instructions:String,
     type:String,
     points:Number,
     group:String,
@@ -14,6 +28,8 @@ const quizSchema = new mongoose.Schema({
     dueDate:String,
     availableDate:String,
     untilDate:String,
+    published:Boolean,
+    questions:[questionSchema]
   },
   { collection: "quizzes" });
 export default quizSchema;
